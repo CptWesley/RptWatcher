@@ -39,12 +39,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="System.Windows.Forms" />
-		<Reference Include="WindowsBase" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Include="Resources/**" />
 		<AdditionalFiles Include="../stylecop.json" Link="stylecop.json" />
 	</ItemGroup>
 </Project>
