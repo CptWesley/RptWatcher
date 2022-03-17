@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace RptWatcher;
 
@@ -13,6 +15,16 @@ public static class Program
     [STAThread]
     public static void Main()
     {
-        Console.WriteLine("Hello world!");
+        NativeMethods.SetProcessDPIAware();
+        Application.EnableVisualStyles();
+        using Form map = new MainForm();
+        Application.Run(map);
+    }
+
+    private static class NativeMethods
+    {
+        [DllImport("user32")]
+        [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
+        public static extern bool SetProcessDPIAware();
     }
 }
